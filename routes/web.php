@@ -1,18 +1,24 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CatarseQuinzeController;
+use App\Http\Controllers\CatarseTrintaController;
+use App\Http\Controllers\HeddController;
+use App\Http\Controllers\LaioCincoController;
+use App\Http\Controllers\LaioDoiseMeioController;
+use App\Http\Controllers\LaioUmeVinteCincoController;
+use App\Http\Controllers\RosaDezController;
+use App\Http\Controllers\RosaVinteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hedd', [HomeController::class, 'hedd']);
-Route::get('/catarse15', [HomeController::class, 'catarsequinze']);
-Route::get('/catarse30', [HomeController::class, 'catarsetrinta']);
-Route::get('/laio125', [HomeController::class, 'laioumevintecinco']);
-Route::get('/laio25', [HomeController::class, 'laiodoisemeio']);
-Route::get('/laio5', [HomeController::class, 'laiocinco']);
-Route::get('/rosa10', [HomeController::class, 'rosadez']);
-Route::get('/rosa20', [HomeController::class, 'rosavinte']);
-
+Route::get('/hedd', [HeddController::class, 'index'])->name('hedd-index');
+Route::get('/catarse15', [CatarseQuinzeController::class, 'index'])->name('catarsequinze-index');
+Route::get('/catarse30', [CatarseTrintaController::class, 'index'])->name('catarsetrinta-index');
+Route::get('/laio125', [LaioUmeVinteCincoController::class, 'index'])->name('laioumevintecinco-index');
+Route::get('/laio25', [LaioDoiseMeioController::class, 'index'])->name('laiodoisemeio-index');
+Route::get('/laio5', [LaioCincoController::class, 'index'])->name('laiocinco-index');
+Route::get('/rosa10', [RosaDezController::class, 'index'])->name('rosadez-index');
+Route::get('/rosa20', [RosaVinteController::class, 'index'])->name('rosavinte-index');
